@@ -1,10 +1,10 @@
 {
-    "ece1f226b161426aafd433aa0e933b5d": {"seed":14, "T":0.44,"w_ramp":0.1,"w_time":0.09, "w_delta":0.2},  //{"seed": 417, "T": 0.21, "w_ramp": 0.12, "w_time": 0.0, "w_delta": 0.0},
+    "ece1f226b161426aafd433aa0e933b5d": {"seed":14, "T":0.44,"w_ramp":0.1,"w_time":0.09, "w_delta":0.2},
     "58c54d6d2775404a9c3a3cde65c32a71": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-
-    "e00c31bc24424be5986b63504ef2572c": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-    "159be9483bdc4dac871458482bbe7c64": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-    "54bbae95c6954858b3c4546072c7c7a6": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
+    "e00c31bc24424be5986b63504ef2572c": {"seed": 294, "T": 0.46, "w_ramp": 0.11, "w_time": 0.01, "w_delta": 0.4},
+    "159be9483bdc4dac871458482bbe7c64": {"seed": 288, "T": 0.46, "w_ramp": 0.14, "w_time": 0.08, "w_delta": 0.2},
+    "54bbae95c6954858b3c4546072c7c7a6": {"seed": 258, "T": 0.47, "w_ramp": 0.11, "w_time": 0.01, "w_delta": 0.3},
+    
     "a1d579a793c1449b944b66bd66e498c9": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "4c000592ba1641d4b00cda3032684321": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "d0dd4b374ab345b5ad09786280bf9ecd": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
@@ -57,5 +57,4 @@
     "d69175aaa78049ffa8f89787975d4ebb": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "12d8da1d3ca84c3899edc82bad99fc23": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "a347f4a790a24f8fbcc5a41b458329cf": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-
 }
