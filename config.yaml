@@ -1,0 +1,14 @@
+experimentName: value_accumulation
+searchSpaceFile: search_space.json
+trialCommand: python nni_experiment.py
+trialCodeDirectory: .
+trialConcurrency: 2
+maxExperimentDuration: 24h
+maxTrialNumber: 6
+tuner:
+  name: TPE
+  classArgs:
+    optimize_mode: minimize
+trainingService:
+  platform: local
+  useActiveGpu: False

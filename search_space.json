@@ -1,7 +1,7 @@
 {
     "seed": {"_type":"randint","_value":[0, 1000]},
-    "T": {"_type":"quniform","_value":[0.1, 0.4, 0.01]},
+    "T": {"_type":"quniform","_value":[0.1, 0.5, 0.01]},
     "w_ramp": {"_type":"quniform","_value":[0.1, 0.3, 0.01]},
-    "w_time": {"_type":"quniform","_value":[0.0, 0.1, 0.01]},
-    "w_delta": {"_type":"quniform","_value":[0.0, 1.0, 0.1]},
+    "w_time": {"_type":"quniform","_value":[0.01, 0.1, 0.01]},
+    "w_delta": {"_type":"quniform","_value":[0.1, 1.0, 0.1]},
 }

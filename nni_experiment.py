@@ -168,40 +168,43 @@ def is_correct(inputs, net, sim, dt=0.001, action_threshold=0.0):
 
 def evaluate_fit(simulated_cues, empirical_cues, trial):
     delta_cues = np.abs(simulated_cues - empirical_cues[trial])
-    print('sim', simulated_cues, 'emp', empirical_cues[trial])
+    # print('sim', simulated_cues, 'emp', empirical_cues[trial])
     return delta_cues
 
 def main(args):
-    if args['target']=='fast':
-        empirical_data = pd.read_pickle("empirical_data.pkl").query("maxSamples==12 & delta==0.1 &participant_id=='58c54d6d2775404a9c3a3cde65c32a71'")
-    elif args['target']=='slow':
-        empirical_data = pd.read_pickle("empirical_data.pkl").query("maxSamples==12 & delta==0.1 &participant_id=='ece1f226b161426aafd433aa0e933b5d'")
-    else:
-        raise
-    empirical_cues = empirical_data['cues'].to_numpy()
-    empirical_accuracy = empirical_data['correct'].to_numpy()
-    deltaP = 0.1
-    maxSamples = 12
+    pid = args['participant_id']
+    total_loss = 0
+    for deltaP in args['deltaPs']:
+        empirical_data = pd.read_pickle("empirical_data.pkl").query("maxSamples==12 & delta==@deltaP & participant_id==@pid")
+        empirical_cues = empirical_data['cues'].to_numpy()
+        empirical_accuracy = empirical_data['correct'].to_numpy()
+        maxSamples = 12
+        nTrials = empirical_data.shape[0]
+        # nTrials = 5
 
-    inputs = Inputs(deltaP=deltaP, maxSamples=maxSamples, seed=args['seed'], empirical=empirical_data)
-    inputs.set_AB_empirical(0)
-    net = build_network(inputs, T=args['T'], w_ramp=args['w_ramp'], w_time=args['w_time'], w_delta=args['w_delta'], seed=args['seed'])
-    delta_cues = np.zeros((empirical_data.shape[0]))
+        inputs = Inputs(deltaP=deltaP, maxSamples=maxSamples, seed=args['seed'], empirical=empirical_data)
+        inputs.set_AB_empirical(0)
+        net = build_network(inputs, T=args['T'], w_ramp=args['w_ramp'], w_time=args['w_time'], w_delta=args['w_delta'], seed=args['seed'])
+        delta_cues = np.zeros((nTrials))
 
-    for trial in range(empirical_data.shape[0]):
-        print(f"trial {trial}")
-        inputs.set_AB_empirical(trial)
-        sim = nengo.Simulator(net, progress_bar=False)
-        with sim:
-            sim.run(maxSamples, progress_bar=True)
-        correct, cue, time = is_correct(inputs, net, sim)
-        delta_cues[trial] = evaluate_fit(cue, empirical_cues, trial)
-        nni.report_intermediate_result(np.sum(delta_cues))
-    nni.report_final_result(np.sum(delta_cues))
+        for trial in range(nTrials):
+            print(f"trial {trial}")
+            inputs.set_AB_empirical(trial)
+            sim = nengo.Simulator(net, progress_bar=False)
+            with sim:
+                sim.run(maxSamples, progress_bar=True)
+            correct, cue, time = is_correct(inputs, net, sim)
+            loss = evaluate_fit(cue, empirical_cues, trial)
+            delta_cues[trial] = loss
+            total_loss += loss
+            # print(total_loss)
+            nni.report_intermediate_result(total_loss)
+    nni.report_final_result(total_loss)
 
 if __name__ == '__main__':
     params = {
-        'target': 'slow',
+        'participant_id': '58c54d6d2775404a9c3a3cde65c32a71',
+        'deltaPs': [0.4, 0.2, 0.1],
         'seed': 0,
         "T": 0.3,
         "w_ramp": 0.2,
@@ -211,3 +214,6 @@ if __name__ == '__main__':
     optimized_params = nni.get_next_parameter()
     params.update(optimized_params)
     main(params)
+
+# ece1f226b161426aafd433aa0e933b5d  # slow
+# 58c54d6d2775404a9c3a3cde65c32a71  # fast
