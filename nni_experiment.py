@@ -203,8 +203,9 @@ def main(args):
 
 if __name__ == '__main__':
     params = {
-        'participant_id': '58c54d6d2775404a9c3a3cde65c32a71',
-        'deltaPs': [0.4, 0.2, 0.1],
+        'participant_id': 'e00c31bc24424be5986b63504ef2572c',
+        # 'deltaPs': [0.4, 0.2, 0.1],
+        'deltaPs': [0.1],
         'seed': 0,
         "T": 0.3,
         "w_ramp": 0.2,
@@ -214,6 +215,3 @@ if __name__ == '__main__':
     optimized_params = nni.get_next_parameter()
     params.update(optimized_params)
     main(params)
-
-# ece1f226b161426aafd433aa0e933b5d  # slow
-# 58c54d6d2775404a9c3a3cde65c32a71  # fast
