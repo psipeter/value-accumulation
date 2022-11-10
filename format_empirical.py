@@ -25,9 +25,13 @@ def format_empirical_data():
         'timestamp', 'subrange_key', 'duration_ms', 'empirical_delta', 'empirical_p1', 'empirical_p2',
         'selected_right', 'started_right', 'last_left', 'last_right',
     ])
-    # first participant is fake
+    # remove bad participants (choose before 1st cue, or have insuficient trials)
     data = data.drop(data[data.participant_id=="11e92cd2764348faa18918c94947d4fa"].index)
+    data = data.drop(data[data.participant_id=="d552b2c7fb97451d97de0c3d489d46a4"].index)
+    data = data.drop(data[data.participant_id=="9ab9798ae227487385e959254bfbd1d8"].index)
+    data = data.drop(data[data.participant_id=="c49874f64a5346c6afa3d847f48ea9e6"].index)
     data.to_pickle("empirical_data.pkl")
+    # print(data.to_string())
 
 def collapse_empirical_data():
     data = pd.read_pickle("data/empirical_data.pkl").query("maxSamples==12")
