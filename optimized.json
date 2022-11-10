@@ -30,18 +30,20 @@
     "50a48ab9a6524411baba1d48fc349a8a": {"seed": 255, "T": 0.5, "w_ramp": 0.13, "w_time": 0.02, "w_delta": 0.1},
     "d22df28e6ca741fdbb2bb6ec36ce8cbb": {"seed": 500, "T": 0.21, "w_ramp": 0.2, "w_time": 0.06, "w_delta": 0.5},
     "b2c0dd396eb24964a350c3eb7103be65": {"seed": 596, "T": 0.5, "w_ramp": 0.14, "w_time": 0.02, "w_delta": 0.8},
+    "4481cde3e6a54d019084d97bd9998eee": {'seed': 672, 'T': 0.29, 'w_ramp': 0.17, 'w_time': 0.01, 'w_delta': 0.1},
+    "c1d5cdde06a04e59abbd183772db6181": {'seed': 541, 'T': 0.43, 'w_ramp': 0.11, 'w_time': 0.01, 'w_delta': 0.1},
+    "b31473a97ca849eab506474bf624c25c": {'seed': 984, 'T': 0.49, 'w_ramp': 0.1, 'w_time': 0.02, 'w_delta': 0.3},
+    "9df3d884bb47476298f5b0a7fe6a86f9": {'seed': 274, 'T': 0.44, 'w_ramp': 0.12, 'w_time': 0.02, 'w_delta': 0.2},
 
-    "4481cde3e6a54d019084d97bd9998eee": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-    "c1d5cdde06a04e59abbd183772db6181": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "3a2bd228962e44e4b55114c4091d11be": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "a04788fb29a04f22b99f15dbe0e4b4d3": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
 
-    "b31473a97ca849eab506474bf624c25c": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-    "9df3d884bb47476298f5b0a7fe6a86f9": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-    "848a9280a9904cb3b18571f2fc514bcf": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
-    "c96017be239848a4b394386913f13026": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
+    "848a9280a9904cb3b18571f2fc514bcf": {'seed': 394, 'T': 0.45, 'w_ramp': 0.16, 'w_time': 0.02, 'w_delta': 0.1},
+    "c96017be239848a4b394386913f13026": {'seed': 879, 'T': 0.49, 'w_ramp': 0.1, 'w_time': 0.02, 'w_delta': 0.5},
+
     "de41155c10694acaa03cb9e97bb7e0c9": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "d73737b5e0524c0bb07f350cadf4e51e": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
+    
     "ad3b086e423b45bb82e378d1ba2f2668": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "b92ff07d0d19447db1b722c51ad3bf92": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
     "eb7b16b6fd0e47dab6a50960a530b28d": {"seed": 74, "T": 0.31, "w_ramp": 0.1, "w_time": 0.04, "w_delta": 0.7},
