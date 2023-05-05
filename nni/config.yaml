@@ -1,0 +1,14 @@
+experimentName: compare_mechanisms
+searchSpaceFile: params.json
+trialCommand: python compare_mechanisms.py
+trialCodeDirectory: ..
+trialConcurrency: 8
+maxExperimentDuration: 24h
+maxTrialNumber: 500
+tuner:
+  name: TPE
+  classArgs:
+    optimize_mode: minimize
+trainingService:
+  platform: local
+  useActiveGpu: False
