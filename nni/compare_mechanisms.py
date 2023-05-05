@@ -174,12 +174,12 @@ def evaluate_fit(simulated_cues, empirical_cues, trial):
 
 def main(args):
 
-    with open('pid_dict.pkl', 'rb') as f:
+    with open('../pid_dict.pkl', 'rb') as f:
         pid_dict = pickle.load(f)
 
     pid = args['pid']
     participant_ID = pid_dict[pid]
-    empirical_data = pd.read_pickle("empirical_data.pkl").query("maxSamples==12 & delta==0.1 & participant_id==@participant_ID")
+    empirical_data = pd.read_pickle("../empirical_data.pkl").query("maxSamples==12 & delta==0.1 & participant_id==@participant_ID")
     empirical_cues = empirical_data['cues'].to_numpy()
     empirical_accuracy = empirical_data['correct'].to_numpy()
     maxSamples = 12

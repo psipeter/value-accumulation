@@ -3,8 +3,8 @@ searchSpaceFile: params.json
 trialCommand: python compare_mechanisms.py
 trialCodeDirectory: ..
 trialConcurrency: 8
-maxExperimentDuration: 24h
-maxTrialNumber: 500
+maxExperimentDuration: 72h
+maxTrialNumber: 1000
 tuner:
   name: TPE
   classArgs:
